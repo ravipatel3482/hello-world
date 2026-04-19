@@ -9,9 +9,10 @@
 
     <div v-else-if="candidate" class="card p-3">
       <h3>{{ candidate.fname }} {{ candidate.lname }}</h3>
+      <h4>{{ 'About: ' +  candidate.summary }}</h4>
       <p>{{ candidate.email }}</p>
       <p>{{ candidate.ph }}</p>
-
+       
       <div>
         <span
           v-for="s in candidate.skills"

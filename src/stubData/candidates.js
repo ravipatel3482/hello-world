@@ -5,7 +5,12 @@ export const candidates = [
                   lname: 'Patel',
                   email: 'ravipatel.3482@gmail.com',
                   ph: '5029421166',
-                  skills: ['C#', 'Python', 'JavaScript', 'TypeScript', '.NET', 'Angular', 'Vue', 'Azure']
+                  summary:"Dave",
+                  skills: ['C#', 'Python', 'JavaScript', 'TypeScript', '.NET', 'Angular', 'Vue', 'Azure'],
+                  gender:'Male',
+                  workAuth:"H1B",
+                  workModels: [], // Array for multiselect
+                  primarySkills: [] // Array for multiselect
                 },
                 {
                   cid:2,
@@ -13,7 +18,12 @@ export const candidates = [
                   lname: 'Shah',
                   email: 'amit.shah@gmail.com',
                   ph: '5551234567',
-                  skills: ['Java', 'Spring Boot', 'React', 'MySQL']
+                  summary:"Dave",
+                  skills: ['Java', 'Spring Boot', 'React', 'MySQL'],
+                  gender:'Male',
+                  workAuth:"H1B",
+                  workModels: [], // Array for multiselect
+                  primarySkills: [] // Array for multiselect
                 },
                 {
                   cid:3,
@@ -21,7 +31,12 @@ export const candidates = [
                   lname: 'Verma',
                   email: 'neha.verma@gmail.com',
                   ph: '5559876543',
-                  skills: ['Python', 'Django', 'Vue', 'AWS']
+                  summary:"Dave",
+                  skills: ['Python', 'Django', 'Vue', 'AWS'],
+                  gender:'Male',
+                  workAuth:"H1B",
+                  workModels: [], // Array for multiselect
+                  primarySkills: [] // Array for multiselect
                 },
                 {
                   cid:4,
@@ -29,7 +44,12 @@ export const candidates = [
                   lname: 'Doe',
                   email: 'john.doe@gmail.com',
                   ph: '5552223333',
-                  skills: ['Node.js', 'Express', 'MongoDB', 'React']
+                  summary:"Dave",
+                  skills: ['Node.js', 'Express', 'MongoDB', 'React'],
+                  gender:'Male',
+                  workAuth:"H1B",
+                  workModels: [], // Array for multiselect
+                  primarySkills: [] // Array for multiselect
                 },
                 {
                   cid:5,
@@ -37,7 +57,12 @@ export const candidates = [
                   lname: 'Patel',
                   email: 'ravipatel.3482@gmail.com',
                   ph: '5029421166',
-                  skills: ['C#', 'Python', 'JavaScript', 'TypeScript', '.NET', 'Angular', 'Vue', 'Azure']
+                  summary:"Dave",
+                  skills: ['C#', 'Python', 'JavaScript', 'TypeScript', '.NET', 'Angular', 'Vue', 'Azure'],
+                  gender:'Male',
+                  workAuth:"H1B",
+                  workModels: [], // Array for multiselect
+                  primarySkills: [] // Array for multiselect
                 },
                 {
                   cid:6,
@@ -45,7 +70,12 @@ export const candidates = [
                   lname: 'Shah',
                   email: 'amit.shah@gmail.com',
                   ph: '5551234567',
-                  skills: ['Java', 'Spring Boot', 'React', 'MySQL']
+                  summary:"Dave",
+                  skills: ['Java', 'Spring Boot', 'React', 'MySQL'],
+                  gender:'Male',
+                  workAuth:"H1B",
+                  workModels: [], // Array for multiselect
+                  primarySkills: [] // Array for multiselect
                 },
                 {
                   cid:7,
@@ -53,7 +83,12 @@ export const candidates = [
                   lname: 'Verma',
                   email: 'neha.verma@gmail.com',
                   ph: '5559876543',
-                  skills: ['Python', 'Django', 'Vue', 'AWS']
+                  summary:"Dave",
+                  skills: ['Python', 'Django', 'Vue', 'AWS'],
+                  gender:'FeMale',
+                  workAuth:"H1B",
+                  workModels: [], // Array for multiselect
+                  primarySkills: [] // Array for multiselect
                 },
                 {
                   cid:8,
@@ -61,6 +96,11 @@ export const candidates = [
                   lname: 'Doe',
                   email: 'john.doe@gmail.com',
                   ph: '5552223333',
-                  skills: ['Node.js', 'Express', 'MongoDB', 'React']
+                  summary:"Dave",
+                  skills: ['Node.js', 'Express', 'MongoDB', 'React'],
+                  gender:'Male',
+                  workAuth:"H1B",
+                  workModels: [], // Array for multiselect
+                  primarySkills: [] // Array for multiselect
                 }
 ]
