@@ -10,6 +10,11 @@ import CandidateDetail from '@/components/Candidate/CandidateDetail.vue'
 import CandidateAddup from '@/components/Candidate/CandidateForm.vue'
 import CandidateList from '@/components/Candidate/ListCandidate.vue'
 import AboutMe from '@/components/AboutMe.vue';
+import Computed from '@/components/Practice/Computed.vue';
+import Parent from '@/components/Basics/parent.vue'
+import Slot from '@/components/Practice/Slot.vue'
+import NamedSlot from '@/components/Practice/NamedSlot.vue'
+import Dynamic_Component from'@/components/Practice/Dynamic.vue'
 const routes = [
   { path: '/',name :"Home", component: AppHome },
   { path: '/home',redirect: '/'},
@@ -66,6 +71,31 @@ const routes = [
                                 props: true
                               },
                            ]
+                },
+                {
+                  path:"computed",
+                  name:"computed",
+                  component: Computed,
+                },
+                {
+                  path:"ParentChildCommunication",
+                  name:"ParentChildCommunication",
+                  component: Parent,
+                },
+                {
+                  path:"Slot",
+                  name:"Slot",
+                  component: Slot,
+                },
+                {
+                  path:"NamedSlot",
+                  name:"NamedSlot",
+                  component: NamedSlot,
+                },
+                {
+                  path:"DynamicComponent",
+                  name:"DynamicComponent",
+                  component: Dynamic_Component,
                 }
            ]
   },

@@ -61,7 +61,7 @@ export default defineComponent({
   name: 'App',
   components: {
     },
- data() {
+  data() {
     return {
       greet: 'Hello',
       name: 'Ravi',
@@ -73,7 +73,7 @@ export default defineComponent({
       hack: `<a href="#" onclick="alert('Hacked!')">Click me</a>`,
       isDisabled: false
     }
-  }, 
+    }, 
   methods: {
     greeting(){
       return '<b>' + this.greet + ', ' + this.name + '!' + '</b>';
@@ -106,6 +106,9 @@ export default defineComponent({
     decrementCount() {
       this.count--;   
     }
+  },
+  provide:{
+    userName:'Robin'
   }
 })
 </script>

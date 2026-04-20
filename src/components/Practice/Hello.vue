@@ -2,6 +2,8 @@
   <div>
     <h1>Hello, {{name  }}!</h1>
     {{ message }}
+    <br>
+    currentUsername = {{ userName }}
   </div>
 </template>
 <script>
@@ -17,6 +19,7 @@ export default defineComponent({
       name: 'robin',
       message: 'Hello, World!'
     }
-  } 
+  },
+  inject:['userName']
 })
 </script>

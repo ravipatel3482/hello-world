@@ -18,8 +18,23 @@
               <RouterLink to="/Practice/condition" class="nav-link">Condition Rendering</RouterLink>
             </li>
             <li class="nav-item">
-              <RouterLink to="/Practice/Looping" class="nav-link">Looping</RouterLink>
+              <RouterLink to="/Practice/Looping" class="nav-link">Looping(Crud)</RouterLink>
             </li>
+            <li class="nav-item">
+              <RouterLink to="/Practice/Computed" class="nav-link">ComputedProperty+watcher</RouterLink>
+            </li>
+            <li class="nav-item">
+              <RouterLink to="/Practice/ParentChildCommunication" class="nav-link">ParentChildCommunication</RouterLink>
+            </li>
+            <li class="nav-item">
+              <RouterLink to="/Practice/Slot" class="nav-link">Slots(ReusedComponent)</RouterLink>
+            </li> 
+            <li class="nav-item">
+              <RouterLink to="/Practice/NamedSlot" class="nav-link">NamedSlot</RouterLink>
+            </li>    
+             <li class="nav-item">
+              <RouterLink to="/Practice/DynamicComponent" class="nav-link">OnDamandCom</RouterLink>
+            </li>                
           </ul>
         </div>
       </nav>

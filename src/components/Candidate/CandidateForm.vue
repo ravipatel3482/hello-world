@@ -23,17 +23,17 @@
             
             <div class="col-md-6">
               <label class="form-label fw-bold">First Name</label>
-              <input type="text" v-model="form.fname" class="form-control" placeholder="John" required>
+              <input type="text" v-model.trim="form.fname" class="form-control" placeholder="John" required>
             </div>
 
             <div class="col-md-6">
               <label class="form-label fw-bold">Last Name</label>
               <input type="text" v-model="form.lname" class="form-control" placeholder="Doe" required>
             </div>
-
+            <!-- Lazy Modifier is added in case for remote validation for avalibility-->
             <div class="col-md-6">
               <label class="form-label fw-bold">Email Address</label>
-              <input type="email" v-model="form.email" class="form-control" placeholder="john.doe@example.com" required>
+              <input type="email" v-model.trim.lazy="form.email" class="form-control" placeholder="john.doe@example.com" required>
             </div>
 
             <div class="col-md-6">
@@ -165,6 +165,7 @@ export default defineComponent({
       SkillsEnum,
       loading: false,
       id: 0,
+      originalForm: null,
       form: {
         cid: 0,
         fname: '',
@@ -177,7 +178,8 @@ export default defineComponent({
         workAuth:"SelectVisaStatus",
         workModels: [], // Array for multiselect
         primarySkills: [] // Array for multiselect
-      }
+      },
+      
     }
   },
   async mounted() {
@@ -192,7 +194,15 @@ export default defineComponent({
     
     this.loading = false;
   },
+  beforeUnmount() {
+     window.removeEventListener('beforeunload', this.preventNav);
+  },
   methods: {
+    preventNav(event) {
+      if (!this.isDirty) return;
+      event.preventDefault();
+      event.returnValue = ''; // Required for Chrome
+    },
     async loadCandidateData() {
       try {
         const res = await fetch(`http://localhost:5000/api/candidate/${this.id}`)
@@ -203,6 +213,7 @@ export default defineComponent({
         if (candidate) {
           // Clone the object so we don't mutate the original stub directly
           this.form = { ...candidate };
+          this.originalForm = JSON.stringify(candidate);
         } else {
           console.error("Candidate not found in api call data");
         }
@@ -210,6 +221,7 @@ export default defineComponent({
         console.error("Error loading data:", error);
         const candidate = candidates.find(c => c.cid === this.id);
         this.form = { ...candidate };
+        this.originalForm = JSON.stringify(candidate);
       }
     },
     async saveCandidate() {
@@ -223,6 +235,7 @@ export default defineComponent({
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(this.form)
               });
+              this.originalForm = JSON.stringify(this.form);
               console.log("API Update Successful");
             } else {
               const res = await fetch(apiUrl, {
@@ -233,6 +246,7 @@ export default defineComponent({
               const newData = await res.json();
               this.form.cid = newData.id; // Assume API returns the new ID
               console.log("API Create Successful");
+              this.originalForm = JSON.stringify(this.form);
             }
             
             // Redirect on success
@@ -261,7 +275,30 @@ export default defineComponent({
         console.log("Added to Stub Data:", newRecord);
       }
       this.$router.push('/Practice/Looping');
-    }
- }
+    }    
+  },
+  computed: {
+      isDirty() {
+        if (!this.originalForm) return false;
+        // Compare current form string to original snapshot string
+        return JSON.stringify(this.form) !== this.originalForm;
+      }
+  },
+  beforeRouteLeave(to, from, next) 
+  {
+      if (this.isDirty) {
+        const answer = window.confirm(
+          'You have unsaved changes! Are you sure you want to leave?'
+        );
+        
+        if (answer) {
+          next(); // User clicked OK, let them leave
+        } else {
+          next(false); // User clicked Cancel, stay on the page
+        }
+      } else {
+        next(); // Form isn't dirty, let them leave immediately
+      }
+  }
 })
 </script>
