@@ -1,5 +1,7 @@
 <template>
-      <span v-if="stubMode" style="color: red;"> Stubed Mode(Using Stubed Data not real Data)</span>
+    <span v-if="stubMode" style="color: red;">
+        Stubed Mode(Using Stubed Data not real Data)
+    </span>
     <br>
     <div class="row justify-content-center">
       <div class="col-md-6">

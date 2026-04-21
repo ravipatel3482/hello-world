@@ -17,6 +17,7 @@ import NamedSlot from '@/components/Practice/NamedSlot.vue'
 import Dynamic_Component from'@/components/Practice/Dynamic.vue'
 import Reactiveprop from '@/components/Practice/reactiveprop.vue'
 import CompositionAPIProp from '@/components/Practice/CompositionAPIProp.vue'
+import ListOfCountry from '@/components/Practice/ListOfCountry.vue'
 const routes = [
   { path: '/',name :"Home", component: AppHome },
   { path: '/home',redirect: '/'},
@@ -108,6 +109,11 @@ const routes = [
                   path:"CompositionAPIProp",
                   name:"CompositionAPIProp",
                   component: CompositionAPIProp,
+                },
+                 {
+                  path:"ListOfCountry",
+                  name:"ListOfCountry",
+                  component: ListOfCountry,
                 }
            ]
   },
