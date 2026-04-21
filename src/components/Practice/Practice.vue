@@ -32,8 +32,14 @@
             <li class="nav-item">
               <RouterLink to="/Practice/NamedSlot" class="nav-link">NamedSlot</RouterLink>
             </li>    
-             <li class="nav-item">
+            <li class="nav-item">
               <RouterLink to="/Practice/DynamicComponent" class="nav-link">OnDamandCom</RouterLink>
+            </li>   
+            <li class="nav-item">
+              <RouterLink to="/Practice/Reactiveprop" class="nav-link">ReactiveProp</RouterLink>
+            </li>       
+            <li class="nav-item">
+              <RouterLink to="/Practice/CompositionAPIProp" class="nav-link">CompositionAPI&Prop</RouterLink>
             </li>                
           </ul>
         </div>

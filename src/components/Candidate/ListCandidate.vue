@@ -8,6 +8,7 @@
             type="text"
             class="form-control me-5"
             v-model="lastName"
+            ref="lastNameref"
             @input="filterCandidateByLastName"
             placeholder="Enter last name to search..."
           />
@@ -99,7 +100,9 @@ export default defineComponent({
       this.$router.push(`/Practice/Looping/add`)
     }
   },
-  async mounted(){    
+  async mounted(){  
+    this.$refs.lastNameref.focus() 
+    this.$refs.lastNameref.style.backgroundColor = 'yellow';
     this.loading = true
     try 
     {

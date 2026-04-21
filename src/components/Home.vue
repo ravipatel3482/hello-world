@@ -10,13 +10,10 @@ export default defineComponent({
   name: 'AppHome',
   components: {
     Greet
-  },
-  setup() {
-    
-  },
+  }, 
   data() {
     return {
-      name:'Devol'
+      name:'niki'
     }
   },
   methods: {  

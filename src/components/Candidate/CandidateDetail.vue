@@ -54,8 +54,11 @@ export default defineComponent({
   components: {
     CandidateInfo, Skills, Address, Experience, ContactDetail
   },
+  created() {
+    this.fetchCandidatDetails()
+  },
   setup() {
-
+    
   },
   data() {
     return {
@@ -75,11 +78,9 @@ export default defineComponent({
   methods: {
     GoBackToList() {
       this.$router.push('/practice/looping')
-    }
-  },
-
-  async mounted() {
-    this.loading = true
+    },
+    async fetchCandidatDetails(){
+      this.loading = true
 
     const id = this.$route.params.cid
 
@@ -101,6 +102,10 @@ export default defineComponent({
     } finally {
       this.loading = false
     }
+    }
+  },
+  mounted() {
+    
   }
 })
 </script>
