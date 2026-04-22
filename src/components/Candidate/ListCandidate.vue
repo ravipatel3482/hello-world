@@ -11,7 +11,6 @@
             class="form-control me-5"
             v-model="lastName"
             ref="lastNameref"
-            @input="filterCandidateByLastName"
             placeholder="Enter last name to search..."
           />
           <button class="btn btn-primary" type="button" @click="AddCandidate()">
@@ -24,7 +23,7 @@
       <div class="row" v-if="loading">Loading...
       </div>
       <div class="row" v-else>
-        <div  class="col-md-4 mb-4"  v-for="c in filterdListOfCandidate"   :key="c.cid">
+        <div  class="col-md-4 mb-4"  v-for="c in filterCandidateByLastName"   :key="c.cid">
           <div class="card h-100 shadow-sm">
             <div class="card-body">
               <h5 class="card-title">
@@ -80,17 +79,7 @@ export default defineComponent({
     }
   },
   methods: {
-    filterCandidateByLastName() {
-       const name = this.lastName.toLowerCase().trim()
-       if (!name) {
-          this.filterdListOfCandidate = this.CandidateList
-          return
-       }
-
-        this.filterdListOfCandidate = this.CandidateList.filter(c =>
-          c.lname.toLowerCase().includes(name)
-        )
-    },
+    
     LoadCandidate(cid) {
        this.$router.push(`/Practice/Looping/view/${cid}`)
     },
@@ -102,7 +91,20 @@ export default defineComponent({
       this.$router.push(`/Practice/Looping/add`)
     }
   },
-  async mounted(){  
+  computed:{
+    filterCandidateByLastName() {
+       const name = this.lastName.toLowerCase().trim()
+       if (!name) {
+          return  this.CandidateList
+          
+       }
+
+         return this.CandidateList.filter(c =>
+          c.lname.toLowerCase().includes(name)
+        )
+    },
+  },
+   async mounted(){  
     this.$refs.lastNameref.focus() 
     this.$refs.lastNameref.style.backgroundColor = 'yellow';
     this.loading = true
