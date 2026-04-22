@@ -36,7 +36,7 @@
       <div class="row" v-if="loading">Loading...
       </div>
       <div class="row" v-else>
-        <div  class="col-md-4 mb-4"  v-for="country in countryList"   :key="country.name.common">
+        <div  class="col-md-4 mb-4"  v-for="country in filteredCountry"   :key="country.name.common">
           <div class="card h-100 shadow-sm">
             <div class="card-body">
               <h5 class="card-title">
