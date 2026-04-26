@@ -1,6 +1,5 @@
 # hello-world  for Live Visit This 
-https://candidatemanagemant.netlify.app/
-
+https://vuejspracticeapp.netlify.app/
 ## Project setup
 ```
 npm install
